@@ -10,14 +10,14 @@ This project is a simple Sentiment Analysis web application that determines whet
 - Frontend built using HTML, CSS, and JavaScript
 
 ## Project Structure
-📂 Sentiment-Analyzer → The main project folder.
-📄 app.py → The Flask backend that processes user input and returns sentiment analysis results.
-📄 train_model.py → A script to train and save the sentiment analysis model.
-📄 model.pkl → The trained sentiment analysis model (serialized using pickle).
-📄 vectorizer.pkl → The text vectorizer (used to convert text into numerical format).
-📄 index.html → The frontend HTML page where users input text.
-📄 styles.css → The CSS file that styles the web app.
-📄 README.md → The documentation file explaining the project.
+📂 Sentiment-Analyzer → The main project folder.<br>
+📄 app.py → The Flask backend that processes user input and returns sentiment analysis results.<br>
+📄 train_model.py → A script to train and save the sentiment analysis model.<br>
+📄 model.pkl → The trained sentiment analysis model (serialized using pickle).<br>
+📄 vectorizer.pkl → The text vectorizer (used to convert text into numerical format).<br>
+📄 index.html → The frontend HTML page where users input text.<br>
+📄 styles.css → The CSS file that styles the web app.<br>
+📄 README.md → The documentation file explaining the project.<br>
 
 ### 1. Clone the Repository
 
