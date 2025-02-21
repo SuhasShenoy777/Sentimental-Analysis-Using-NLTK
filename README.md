@@ -21,7 +21,7 @@ This project is a simple Sentiment Analysis web application that determines whet
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/sentiment-analyzer.git
+git clone (https://github.com/SuhasShenoy777/Sentimental-Analysis-Using-NLTK.git)
 cd sentiment-analyzer
 
 ### 2. Install Dependencies
@@ -50,12 +50,9 @@ The app will display whether the sentiment is Positive or Negative.
 
 ### Screenshots
 
-Positive Sentiment Example
-![Screenshot 2025-02-20 184329](https://github.com/user-attachments/assets/03d6838e-41ae-44ca-afce-fe570670bbdf)
-
-
-Negative Sentiment Example
-![Screenshot 2025-02-20 184459](https://github.com/user-attachments/assets/e86f8522-f468-408d-b3b8-1cd6d2a95fe0)
+provided in the "Sentimental_Analysis" folder for :
+1)Positive Sentiment Example
+2)Negative Sentiment Example
 
 
 ### Technologies Used
