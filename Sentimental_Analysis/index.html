@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="background-slider">
+        <div class="slide fade"></div>
+        <div class="slide fade"></div>
+        <div class="slide fade"></div>
+    </div>
+
+    <div class="container">
+        <h1>Sentiment Analyzer for internship project</h1>
+        <p>Enter a sentence and check if it's positive or negative!</p>
+
+        <textarea id="textInput" rows="4" placeholder="Type your text here..."></textarea>
+        <button onclick="analyzeSentiment()">Analyze</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function analyzeSentiment() {
+            let text = document.getElementById("textInput").value;
+            let resultElement = document.getElementById("result");
+
+            if (text.trim() === "") {
+                resultElement.innerText = "Please enter some text.";
+                return;
+            }
+
+            resultElement.innerText = "Analyzing..."; // Show loading text
+
+            fetch("http://127.0.0.1:5001/predict", {  // Ensure Flask server is running on port 5001
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    resultElement.innerText = "Error: " + data.error;
+                } else {
+                    resultElement.innerText = "Sentiment: " + data.prediction;
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                resultElement.innerText = "Error connecting to server.";
+            });
+        }
+
+        // Background Slider Logic
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let slide of slides) {
+                slide.style.opacity = "0";
+            }
+            slides[slideIndex].style.opacity = "1";
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 4000);
+        }
+        showSlides();
+    </script>
+
+</body>
+</html>
